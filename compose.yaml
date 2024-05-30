@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   web:
-    image: odoo:17.0
+    build: .
     depends_on:
       - db
     ports:
@@ -14,6 +14,10 @@ services:
     environment:
       - USER=herve
       - PASSWORD=herve
+    develop:
+      watch:
+        - action: rebuild
+          path: .
   db:
     image: postgres:15
     environment:

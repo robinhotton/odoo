@@ -20,7 +20,7 @@ fi
 chmod -R 777 .
 
 # Lancer les conteneurs Docker
-sudo docker compose up
+sudo docker compose watch
 
 # Afficher un message de fin
 echo 'Environnement setup !'
