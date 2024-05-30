@@ -1,25 +1,22 @@
 #!/bin/bash
 
-# Définir les variables
+# Define variables
 CONFIG_DIR="config"
-ADDONS_TECKEN_DIR="addons-tecken"
+ADDONS_CUSTOM_DIR="addons-custom"
 ADDONS_ODOO_DIR="addons-odoo"
 ODOO_DATA_DIR="odoo-web-data"
 
-# Déplacer le fichier de configuration dans le répertoire de configuration s'il existe
+# Move the configuration file to the configuration directory if it exists
 if [ -f "odoo.conf" ]; then
     ODOO_CONF="$CONFIG_DIR/odoo.conf"
-    mv -f odoo.conf $CONFIG_DIR/ # -f force l'écrasement
+    mv -f odoo.conf $CONFIG_DIR/ # -f forces overwrite
 
-    # Créer les répertoires nécessaires s'ils n'existent pas
-    mkdir -p $CONFIG_DIR $ADDONS_TECKEN_DIR $ADDONS_ODOO_DIR $ODOO_DATA_DIR # -p permet de ne pas avoir d'erreur si le dossier existe déjà
+    # Create necessary directories if they don't exist
+    mkdir -p $CONFIG_DIR $ADDONS_CUSTOM_DIR $ADDONS_ODOO_DIR $ODOO_DATA_DIR # -p prevents error if the directory already exists
 fi
 
-# Ajouter des permissions
+# Add permissions
 chmod -R 777 .
 
-# Lancer les conteneurs Docker
+# Launch Docker containers
 docker compose up
-
-# Afficher un message de fin
-echo 'Environment setup complete!'
