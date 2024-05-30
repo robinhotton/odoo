@@ -7,10 +7,10 @@ services:
     ports:
       - "8069:8069"
     environment:
-      - USER=admin
-      - PASSWORD=admin
+      - USER=herve
+      - PASSWORD=herve
     volumes:
-      - ./odoo-web-data:/var/lib/odoo
+      - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons-custom:/mnt/extra-addons
       # - ./addons-odoo:/usr/lib/python3/dist-packages/odoo/addons
@@ -22,8 +22,8 @@ services:
     image: postgres:15
     environment:
       - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=herve
+      - POSTGRES_USER=herve
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
@@ -36,3 +36,4 @@ services:
 
 volumes:
   odoo-db-data:
+  odoo-web-data:
