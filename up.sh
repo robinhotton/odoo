@@ -13,10 +13,10 @@ if [ -f "odoo.conf" ]; then
 
     # Create necessary directories if they don't exist
     mkdir -p $CONFIG_DIR $ADDONS_CUSTOM_DIR $ADDONS_ODOO_DIR $ODOO_DATA_DIR # -p prevents error if the directory already exists
-fi
 
-# Add permissions
-chmod -R 777 .
+    # Add permissions
+    chmod -R 777 .
+fi
 
 # Launch Docker containers
 docker compose up

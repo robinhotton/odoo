@@ -10,7 +10,7 @@ services:
       - USER=herve
       - PASSWORD=herve
     volumes:
-      - odoo-web-data:/var/lib/odoo
+      - ./odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons-custom:/mnt/extra-addons
       # - ./addons-odoo:/usr/lib/python3/dist-packages/odoo/addons
@@ -36,4 +36,3 @@ services:
 
 volumes:
   odoo-db-data:
-  odoo-web-data:
