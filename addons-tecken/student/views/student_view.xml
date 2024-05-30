@@ -23,8 +23,8 @@
               <field name="name1"/>
               <field name="name2" readonly="1"/>
               <field name="name3" required="1"/>
-              <field name="name4" />
-              <field name="name5" />
+              <field name="name4"/>
+              <field name="name5"/>
               <field name="student_name" string="STD NM" />
             </group>
           </sheet>
@@ -38,20 +38,11 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="wb_student_root_menu"
-              name="Student"
-    />
+    <menuitem id="wb_student_root_menu" name="Student" />
 
-    <menuitem id="wb_student_sub_root_menu"
-              name="Weblearns"
-              parent="wb_student_root_menu"
-    />
+    <menuitem id="wb_student_sub_root_menu" name="Weblearns" parent="wb_student_root_menu" />
 
-    <menuitem id="wb_student_menu"
-              action="wb_student_action"
-              name="Student List"
-              parent="wb_student_sub_root_menu"
-    />
-  
+    <menuitem id="wb_student_menu" action="wb_student_action" name="Student List" parent="wb_student_sub_root_menu" />
+
   </data>
 </odoo>

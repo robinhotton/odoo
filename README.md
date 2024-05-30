@@ -116,6 +116,8 @@ Il va supprimer :
 
 Contrairement à la doc de mise en place du docker Odoo, la documentation du développement de module personnalisé me semble plus complète et plus fournis avec des élements préfait et des outils sur lesquels ont peut se reposer afin d'avoir du code plus maintenable et être plus productif.
 
+Odoo :
+
 - [Documentation officiel Odoo 17](https://www.odoo.com/documentation/17.0/)
 - [IDE odoo.sh](https://youtu.be/QuNsa9n9PMg)
 - [Exemple de module personnalisés](https://github.com/er-harsh-dhaduk/odoo-training/tree/16.0/custom_addons)
@@ -123,6 +125,12 @@ Contrairement à la doc de mise en place du docker Odoo, la documentation du dé
 - [Confort de developpement](https://apps.odoo.com/apps/modules/17.0/odoo_python_pip_install_library/)
 - [odoo.conf, Dockerfile](https://github.com/odoo/docker/tree/master/17.0)
 - [odoo module code](https://github.com/odoo/odoo/tree/17.0/addons)
+
+Docker docs :
+
+- [watch](https://docs.docker.com/language/python/develop/)
+- [dockerfile](https://docs.docker.com/reference/dockerfile/)
+- [networking](https://docs.docker.com/compose/networking/)
 
 <br>
 <br>
@@ -143,37 +151,3 @@ Dans le `__manifest__.py`, il y a 2 mot clé pour faire des installation automat
 
 1. `'depends': ['student'],` permet d'installer le module student si se module est installé.
 2. `'auto_install': True,` si toutes les dépendances sont installé mais pas ce module, permet de l'installer automatiquement.
-
-### field
-
-- integer
-- float
-- boolean, checkbox
-- char, small text
-- text, long text
-- html, long text + coloration
-- selection, dropdown
-- date
-- monetary
-- binary
-- image
-- json
-- Many2One / One2Many
-- compute / related
-- reference
-
-### attribute
-
-- string
-- required
-- invisible
-- groups
-- size
-- index
-- help
-- default
-- readonly
-- translate
-- states
-- widget
-- tracking

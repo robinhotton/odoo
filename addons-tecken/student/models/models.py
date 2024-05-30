@@ -11,6 +11,5 @@ class Student(models.Model):
     name2 = fields.Char("Name2", copy=False, help="This is the name of the student.") # permet de ne pas dupliquer la valeur lors de la duplication d'un enregistrement
     name3 = fields.Char("Name3", default="Weblearns", nullable=False)
     name4 = fields.Char("Name4", readonly=True)
-    name5 = fields.Char("Name5", readonly=True)
-    
+    name4 = fields.Char("Name5", required=True)
     student_name = fields.Char(string="Student", required=True, index=True, size=5)

@@ -6,18 +6,18 @@ services:
       - db
     ports:
       - "8069:8069"
+    environment:
+      - USER=herve
+      - PASSWORD=herve
     volumes:
       - ./odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons-tecken:/mnt/extra-addons
       # - ./addons-odoo:/usr/lib/python3/dist-packages/odoo/addons
-    environment:
-      - USER=herve
-      - PASSWORD=herve
     develop:
       watch:
         - action: rebuild
-          path: .
+          path: ./addons-tecken
   db:
     image: postgres:15
     environment:
