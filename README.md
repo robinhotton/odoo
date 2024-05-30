@@ -47,22 +47,15 @@
 
 ---
 
-1. Executer `sudo chmod +x ./up.sh ./down.sh`
+1. Executer `sudo chmod -r 777 .`
 2. Executer `sudo ./up.sh`
 3. Se connecter à [Odoo](http://localhost:8069/) :
-
-- Master Password: 0123-4567-8910
-- Database Name: odoo
-- Email: votre mail diginamic-formation
-- Password: Diginamic34\_
-
-4. Télécharger le module project
-5. Se connecter sur [PostgreSQL](http://localhost:8070/) :
+4. Se connecter sur [PostgreSQL](http://localhost:8070/) :
 
 - System: PostgreSQL
 - Server: db
-- USername: herve
-- Password: herve
+- USername: admin
+- Password: admin
 - Database: odoo
 
 <br>
@@ -77,9 +70,13 @@ Executer `sudo ./down.sh`
 
 Il va supprimer :
 
-- 3 containers
-- les 2 volumes
-- le _.local_ du dossier odoo-web-data
+- 3 containers : 
+  - odoo-db-1
+  - odoo-web-1
+- les 2 volumes :
+  - odoo_odoo-db-data
+  - volume anonyme
+- le contenu du dossier odoo-web-data
 
 <br>
 <br>
@@ -89,9 +86,10 @@ Il va supprimer :
 
 ---
 
-1. Exécuter `docker ps` pour voir les nom et id des dockers
-2. Exécuter `docker exec -it <odoo-docker> bash`, avec l'id ou le nomdu docker odoo
-3. Exécuter `odoo scaffold <new_module_name> /mnt/extra-addons` pour créer la structure de votre module
+Exécuter `sudo ./create-module <new_module_name>` pour créer la structure de votre module
+- Il va créer le module grace à la commande `odoo scaffold <new_module_name> /mnt/extra-addons`
+- Il va prendre la possession du dossier créé. (affecté à odoo par défaut)
+- Il va donner les droits d'écriture du module
 
 <br>
 <br>
