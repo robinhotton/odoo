@@ -70,7 +70,7 @@ Executer `sudo ./down.sh`
 
 Il va supprimer :
 
-- 3 containers : 
+- 3 containers :
   - odoo-db-1
   - odoo-web-1
 - les 2 volumes :
@@ -87,6 +87,7 @@ Il va supprimer :
 ---
 
 Exécuter `sudo ./create-module <new_module_name>` pour créer la structure de votre module
+
 - Il va créer le module grace à la commande `odoo scaffold <new_module_name> /mnt/extra-addons`
 - Il va prendre la possession du dossier créé. (affecté à odoo par défaut)
 - Il va donner les droits d'écriture du module
